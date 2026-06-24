@@ -5,13 +5,13 @@ library(tidyverse)
 g100 <- read.csv("g100.csv", header = TRUE) %>%
   mutate(across(where(is.character), ~na_if(.,"")))
 
-cred <- read.csv("creditors.csv", header = TRUE)
+cred <- read.csv("creditors_sec.csv", header = TRUE)
 cred <- cred %>%
   na.omit(Deal.Permid) %>%
   mutate(across(where(is.character), ~na_if(.,""))) %>%
   fill(Company.Common.Name) 
 
-own <- read.csv("owners.csv", header = TRUE)
+own <- read.csv("owners_sec.csv", header = TRUE)
 own <- own %>%
   filter(Investor.Shares.Held > 0) %>%
   fill(Close.Price) %>%
@@ -31,7 +31,7 @@ cred %>%
   group_by(Company.Common.Name) %>%
   summarise(n=n())
 
-write.csv(cred, "g100_Creditors.csv")
+write.csv(cred, "sec_Creditors.csv")
 
 # Identify Top Owners
 
@@ -106,4 +106,4 @@ own <- own %>%
             Company.Common.Name = first(Company.Common.Name)) %>%
   arrange(Company.Common.Name)
 
-write.csv(own, "g100_Owners.csv")
+write.csv(own, "sec_Owners.csv")
