@@ -1,1 +1,1 @@
-This repository holds relevant files for the "Group of 100" project led by Friends of the Earth International. All data is obtained from the LSEG Worldscope and DealScan databases by Nikhil Feroze Ghosh (nikhil.ghosh@york.ac.uk).  
+This repository holds relevant files for the "Group of 100" project led by Friends of the Earth International. All data is obtained from the LSEG Worldscope and DealScan databases by Nikhil Feroze Ghosh (nikhil.ghosh@york.ac.uk). FOEG100.py can be imported into Refinitiv Codebook Python API to obtain the data.  
